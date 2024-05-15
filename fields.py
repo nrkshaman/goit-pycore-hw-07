@@ -28,6 +28,6 @@ class Birthday(Field):
             # Додайте перевірку коректності даних
             # та перетворіть рядок на об'єкт datetime
             date = datetime.strptime(value, "%d.%m.%Y").date()
-            super.__init__(date)
+            super().__init__(date)
         except ValueError:
             raise InvalidBirthday
