@@ -7,16 +7,17 @@ class Field:
 
     def __str__(self):
         return str(self.value)
+    
+    def __repr__(self) -> str:
+        return self.__str__()
 
 class Name(Field):
-    
     def __init__(self, value):
         if not (value and isinstance(value, str)):
             raise InvalidName
         super().__init__(value)
 
 class Phone(Field):
-    # реалізація класу
     def __init__(self, value):
         if not (isinstance(value, str) and len(value)==10 and value.isdecimal()):
             raise InvalidPhone
